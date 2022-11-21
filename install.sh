@@ -17,7 +17,7 @@ setup_custom_scripts() {
     mkdir $HOMEDIR/development/
   fi
   # Download scripts into development folder
-  git clone https://github.com/mdube99/scripts.git 
+  git clone https://github.com/mdube99/scripts.git $HOME/development/scripts
 }
 
 install_apt_applications() {
