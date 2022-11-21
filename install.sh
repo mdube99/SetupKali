@@ -8,7 +8,7 @@ apt update && apt upgrade
 setup_custom_scripts() {
   echo -e "\n Setting up dotfiles"
   # Download dotfiles
-  git clone git@github.com:mdube99/dotfiles.git $HOMEDIR/.
+  git clone https://github.com/mdube99/dotfiles.git $HOMEDIR/.
   # Setup zsh settings
   echo "source $HOMEDIR/dotfiles/zsh/zshrc.sh" >> $HOMEDIR/.zshrc
   echo "source-file /home/mark/dotfiles/tmux/tmux.conf" >> $HOMEDIR/.tmux.conf
@@ -17,7 +17,7 @@ setup_custom_scripts() {
     mkdir $HOMEDIR/development/
   fi
   # Download scripts into development folder
-  git clone git@github.com:mdube99/scripts.git $HOMEDIR/development/.
+  git clone https://github.com/mdube99/scripts.git $HOMEDIR/development/.
 }
 
 install_apt_applications() {
