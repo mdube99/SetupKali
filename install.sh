@@ -22,7 +22,7 @@ setup_custom_scripts() {
 
 install_apt_applications() {
   echo -e "\n Installing Apt Applications"
-  for $l in $(cat $APT_PACKAGES); do
+  for l in $(cat $APT_PACKAGES); do
     echo "$l"
   done
 }
