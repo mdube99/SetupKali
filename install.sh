@@ -13,7 +13,7 @@ setup_custom_scripts() {
   echo "source $HOMEDIR/dotfiles/zsh/zshrc.sh" >> $HOME/.zshrc
   echo "source-file /home/mark/dotfiles/tmux/tmux.conf" >> $HOME/.tmux.conf
   # Check for development folder, make it if it's not there
-  if [ -z "$HOMEDIR/development"]; then
+  if [[ -z "$HOMEDIR/development"]]; then
     mkdir $HOMEDIR/development/
   fi
   # Download scripts into development folder
