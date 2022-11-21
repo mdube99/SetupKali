@@ -46,3 +46,8 @@ install_opt_programs() {
   mkdir /opt/procdump
   wget "https://download.sysinternals.com/files/Procdump.zip" /opt/procdump
 }
+
+setup_custom_scripts();
+install_apt_applications();
+install_python_applications();
+install_opt_programs();
