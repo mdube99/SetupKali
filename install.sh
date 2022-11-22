@@ -6,7 +6,7 @@ HOMEDIR="/home/$(logname)"
 setup_custom_scripts() {
   echo -e "\n Setting up dotfiles"
   # Download dotfiles
-  git clone https://github.com/mdube99/dotfiles.git
+  git clone https://github.com/mdube99/dotfiles.git ~/dotfiles
   # Setup zsh settings
   echo "source $HOMEDIR/dotfiles/zsh/zshrc.sh" >> $HOME/.zshrc
   echo "source-file /home/mark/dotfiles/tmux/tmux.conf" >> $HOME/.tmux.conf
@@ -21,7 +21,7 @@ setup_custom_scripts() {
 install_apt_applications() {
   echo -e "\n Installing Apt Applications"
   for l in $(cat $APT_PACKAGES); do
-    echo "$l"
+    sudo apt install -y "$l"
   done
 }
 
