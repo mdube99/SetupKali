@@ -1,9 +1,7 @@
 #!/bin/bash
 
-APT_PACKAGES="./programs/packages.list"
+APT_PACKAGES="./SetupKali/programs/packages.list"
 HOMEDIR="/home/$(logname)"
-
-apt update && apt upgrade
 
 setup_custom_scripts() {
   echo -e "\n Setting up dotfiles"
@@ -17,7 +15,7 @@ setup_custom_scripts() {
     mkdir $HOMEDIR/development/
   fi
   # Download scripts into development folder
-  git clone https://github.com/mdube99/scripts.git $HOME/development/scripts
+  git clone https://github.com/mdube99/scripts.git ~/development/scripts
 }
 
 install_apt_applications() {
@@ -40,10 +38,9 @@ install_go_applications() {
 }
 
 install_opt_programs() {
-  git clone 
-  mkdir /opt/namemash
+  sudo mkdir /opt/namemash
   curl "https://gist.githubusercontent.com/superkojiman/11076951/raw/74f3de7740acb197ecfa8340d07d3926a95e5d46/namemash.py" >> /opt/namemash/namemash.py
-  mkdir /opt/procdump
+  sudo mkdir /opt/procdump
   wget "https://download.sysinternals.com/files/Procdump.zip" /opt/procdump
 }
 
