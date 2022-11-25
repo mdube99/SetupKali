@@ -6,3 +6,6 @@ flameshot
 tmux
 neovim
 exa
+ripgrep
+bloodhound
+feroxbuster
