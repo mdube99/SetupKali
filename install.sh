@@ -8,8 +8,8 @@ setup_custom_scripts() {
   # Download dotfiles
   git clone https://github.com/mdube99/dotfiles.git ~/dotfiles
   # Setup zsh settings
-  echo "source $HOMEDIR/dotfiles/zsh/zshrc.sh" >> $HOME/.zshrc
-  echo "source-file /home/mark/dotfiles/tmux/tmux.conf" >> $HOME/.tmux.conf
+  echo "source $HOME/dotfiles/zsh/zshrc.sh" >> $HOME/.zshrc
+  echo "source-file $HOME/dotfiles/tmux/tmux.conf" >> $HOME/.tmux.conf
   # Check for development folder, make it if it's not there
   if [[ -z "$HOMEDIR/development"]]; then
     mkdir $HOMEDIR/development/
