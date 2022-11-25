@@ -10,12 +10,18 @@ setup_custom_scripts() {
   # Setup zsh settings
   echo "source $HOME/dotfiles/zsh/zshrc.sh" >> $HOME/.zshrc
   echo "source-file $HOME/dotfiles/tmux/tmux.conf" >> $HOME/.tmux.conf
+
   # Check for development folder, make it if it's not there
   if [[ -z "$HOMEDIR/development"]]; then
     mkdir $HOMEDIR/development/
   fi
+
   # Download scripts into development folder
   git clone https://github.com/mdube99/scripts.git ~/development/scripts
+
+  # Setup neovim config
+  mkdir ~/.config/nvim
+  git clone https://github.com/mdube99/nvim ~/.config/nvim
   # Restart zsh
   exec zsh
 }
@@ -25,13 +31,17 @@ install_apt_applications() {
   for l in $(cat $APT_PACKAGES); do
     sudo apt install -y $l
   done
+
+  # Installing Burp Pro
+  echo -e "\nInstalling Burp Pro"
+  wget -O /tmp/burp_pro "https://portswigger-cdn.net/burp/releases/download?product=pro&version=2022.9.6&type=Linux" 
+  bash /tmp/burp_pro
 }
 
 install_python_applications() {
   echo -e "\n Installing Python Applications"
   pip install git+https://github.com/blacklanternsecurity/trevorproxy
   pip3 install updog
-  pip install bloodhound
 }
 
 install_go_applications() {
