@@ -1,7 +1,6 @@
 #!/bin/bash
 
 APT_PACKAGES="./SetupKali/programs/packages.list"
-HOMEDIR="/home/$(logname)"
 
 setup_custom_scripts() {
   echo -e "\n Setting up dotfiles"
